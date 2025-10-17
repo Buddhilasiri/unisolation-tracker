@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Clock, Share2, RefreshCw } from "lucide-react";
 
@@ -38,7 +38,7 @@ interface TrackerState {
   upn?: string;
   bu?: string;
   active: StepId;                    // current step id
-  completed: Record<StepId, string>; // timestamp map
+  completed: Partial<Record<StepId, string>>; // timestamp map
   log: Array<{ ts: string; who: Role; what: string }>; // audit trail
   readonly?: boolean;                // true if opened from snapshot
 }
